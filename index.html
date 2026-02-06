@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine 💖</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff416c,#ff4b2b);
+    font-family:sans-serif;
+}
+
+.box{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    width:90%;
+    max-width:320px;
+    position:relative;
+}
+
+h2{
+    color:#ff416c;
+}
+
+button{
+    padding:12px 22px;
+    font-size:16px;
+    border:none;
+    border-radius:25px;
+    margin:10px;
+}
+
+#yes{
+    background:#ff416c;
+    color:white;
+}
+
+#no{
+    background:#555;
+    color:white;
+    position:absolute;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Majhi Valentine banshil ka? 💘</h2>
+    <button id="yes" onclick="yesClick()">YES 😍</button>
+    <button id="no" ontouchstart="moveNo()">NO 🙈</button>
+</div>
+
+<script>
+function yesClick(){
+    document.body.innerHTML = `
+    <div style="
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:#ff416c;
+        color:white;
+        font-size:26px;
+        text-align:center;">
+        Yayyy 💖<br>
+        Mala mahit hota tu YES mhanshil 😘
+    </div>`;
+}
+
+function moveNo(){
+    const no = document.getElementById("no");
+    const x = Math.random()*200 - 100;
+    const y = Math.random()*200 - 100;
+    no.style.transform = `translate(${x}px,${y}px)`;
+}
+</script>
+
+</body>
+</html>
